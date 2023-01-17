@@ -20,5 +20,8 @@
     "prisma": "^4.9.0",
     "prisma-erd-generator": "^1.2.5",
     "tsx": "^3.12.2"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
