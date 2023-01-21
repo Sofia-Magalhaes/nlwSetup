@@ -76,7 +76,7 @@ export function Habit() {
       }
     } catch (error) {
       console.log(error);
-      Alert.alert("Ops", "Não foi possível atualizar o status do hábito.");
+      Alert.alert("Ops", "Não foi possível atualizar o status do hábito. :(");
     }
   }
 
