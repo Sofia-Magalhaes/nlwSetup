@@ -6,10 +6,10 @@ import { HabitDay } from "./HabitDay";
 
 const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"];
 
-const summaryDates = generateDatesFromYearBeginning()
+const summaryDates = generateDatesFromYearBeginning();
 
-const minimumSummaryDatesSize = 18 * 7 // 18 weeks
-const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
+const minimumSummaryDatesSize = 18 * 7; // 18 weeks
+const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length;
 
 type Summary = {
   id: string;
@@ -43,20 +43,21 @@ export function SummaryTable() {
       </div>
 
       <div className="grid grid-rows-7 grid-flow-col gap-3">
-        {summary.length > 0 && summaryDates.map((date) => {
-          const dayInSummary = summary.find((day) => {
-            return dayjs(date).isSame(day.date, "day");
-          });
+        {summary.length > 0 &&
+          summaryDates.map((date) => {
+            const dayInSummary = summary.find((day) => {
+              return dayjs(date).isSame(day.date, "day");
+            });
 
-          return (
-            <HabitDay
-              key={date.toString()}
-              date={date}
-              amount={dayInSummary?.amount}
-              defaultCompleted={dayInSummary?.completed}
-            />
-          );
-        })}
+            return (
+              <HabitDay
+                key={date.toString()}
+                date={date}
+                amount={dayInSummary?.amount}
+                defaultCompleted={dayInSummary?.completed}
+              />
+            );
+          })}
         {amountOfDaysToFill > 0 &&
           Array.from({ length: amountOfDaysToFill }).map((_, i) => {
             return (
