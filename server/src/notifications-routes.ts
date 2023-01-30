@@ -38,7 +38,9 @@ export async function notificationsRoutes(app: FastifyInstance) {
 
         const { subscription } = sendPushBody.parse(request.body)
 
-        WebPush.sendNotification(subscription, 'Hello do Backend')
+        setTimeout(() => {
+            WebPush.sendNotification(subscription, 'Hello do Backend')
+        }, 5000)
 
     return reply.status(201).send()
 })
