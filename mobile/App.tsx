@@ -42,6 +42,11 @@ export default function App() {
     });
   }
 
+  async function getScheduleNotification(){
+    const schedules = await Notifications.getAllScheduledNotificationsAsync();
+    console.log(schedules)
+  }
+
   // esse if faz com que se a fonte não estiver carregada o app não vai entrar direto
   // vai exibir uma tala de carregamento
   if (!fontsLoaded) {
@@ -50,7 +55,8 @@ export default function App() {
 
   return (
     <>
-    {/* <Button title="Enviar Notificação" onPress={scheduleNotification}/> */}
+    {/* <Button title="Enviar" onPress={scheduleNotification}/>
+    <Button title="Agendar" onPress={getScheduleNotification}/> */}
       <Routes />
       <StatusBar
         barStyle={"light-content"}
